@@ -15,4 +15,4 @@ Much work is still to be done on this assignment.
 
 ### picture of Webpage:
 
-![image of newQuiz Website](https://ljbrewer.github.io/newQuiz/assets/images/newQuiz.png)
+![Image of newQuiz](https://github.com/ljbrewer/newQuiz/images/newQuiz.png)
