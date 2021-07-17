@@ -8,3 +8,11 @@ when a question is chosen the background will reflect if the answer is correct i
 once a question has been answered then the Next button appears to move to the next question.
 After all 5 questions have been presented and answered a Restart button appears.
 Much work is still to be done on this assignment.
+
+
+### link to page :https://ljbrewer.github.io/newQuiz/
+### link to Github repository:  https://github.com/ljbrewer/newQuiz
+
+### picture of Webpage:
+
+![image of newQuiz Website](https://ljbrewer.github.io/newQuiz/assets/images/newQuiz.png)
