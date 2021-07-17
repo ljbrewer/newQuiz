@@ -19,8 +19,20 @@ nextButton.addEventListener('click', () => {
     setNextQuestion()
 })
 
+function startTimer() {
+    var timeleft = 10;
+    var downloadTimer = setInterval(function () {
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById("countdown").innerHTML = "Finished";
+        } else {
+            document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+        }
+        timeleft -= 1;
+    }, 1000);
+}
 function startGame() {
-
+   
 console.log("in startGame")
     
     startButton.classList.add('hide')
@@ -37,7 +49,7 @@ console.log("in startGame")
 }
 
 function setNextQuestion(){
-
+    startTimer()
 console.log("in setNextQuestion")
     console.log("going to resetState")
     resetState()
@@ -105,6 +117,8 @@ console.log("In selectAnswer")
     if (correct){
         score++
         console.log("score is " + score)
+    } else {
+        timerCount = timerCount - 5;
     }
 }
 

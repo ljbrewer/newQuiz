@@ -39,6 +39,7 @@ body.wrong{
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10PX 3PX;
+    font-size: 1.5rem;
 
 }
  .btn-grid{
@@ -59,7 +60,7 @@ body.wrong{
      outline: none;
      font-weight: 900 ;
      font-size: 1.5rem;
-     
+     border-style: ridge;
 
  }
 
@@ -92,4 +93,12 @@ body.wrong{
 
  .hide {
      display: none;
+ }
+
+ .win-loss-container, #countdown {
+     background-color: lightblue;
+     color:rgb(5, 0, 10);
+     padding : 5px;
+     margin: 0 0 auto;
+     border-style: ridge;
  }
