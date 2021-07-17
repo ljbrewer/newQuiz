@@ -38,25 +38,19 @@ console.log("in startGame")
     startButton.classList.add('hide')
     shuffledQuestions=questions.sort(() => Math.random() - .5)
 
-  //  console.log("shuffledQuestions", shuffledQuestions)
-
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
- 
-   console.log("in startGame setnextquestion is next")
+
 
     setNextQuestion()
 }
 
 function setNextQuestion(){
     startTimer()
-console.log("in setNextQuestion")
-    console.log("going to resetState")
+
     resetState()
-    console.log("back from resetState going to showQuestion")
+
     showQuestion(shuffledQuestions[currentQuestionIndex])
-    console.log("back from showQuestion")
-   // console.log(showQuestion, " is the next question")
 }
 
 function showQuestion(question){
@@ -70,17 +64,9 @@ console.log("in showQuestion")
         button.classList.add('btn')
         if (answer.correct){
 
-       console.log("in showQuesiton If")
-
             button.dataset.correct=answer.correct
-
-         //   console.log("button.dataset.correct " + button.dataset.correct)
-            
-
         }
-        console.log("going to selectAnswer")
         button.addEventListener('click', selectAnswer)
-        console.log("back from selectAnswer")
         answerButtonsElement.appendChild(button)
        
     })
@@ -88,70 +74,50 @@ console.log("in showQuestion")
 
 function selectAnswer(e){ 
 
-console.log("In selectAnswer")
-
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
  
-    console.log("going to  setStatusClass")
     setStatusClass(document.body, correct)
-    console.log("back to selectAnswer from setStatusClass")
-    console.log(correct + " is the selectAnswer func")
-    console.log("going to  setStatusClass")
+
     Array.from(answerButtonsElement.children).forEach(button =>{
         setStatusClass(button, button.dataset.correct)
-        console.log("back from setStatusClass")
     })
-    if (shuffledQuestions.length > currentQuestionIndex + 1){
 
-      //  console.log(shuffledQuestions.length, "is the length of array", currentQuestionIndex)
+    if (shuffledQuestions.length > currentQuestionIndex + 1){
 
         nextButton.classList.remove('hide')
     } else {
 
-        console.log("in selectAnswer else")
         startButton.innerText= "Restart"
         currentQuestionIndex = 0
         startButton.classList.remove('hide')
     }
+
     if (correct){
         score++
-        console.log("score is " + score)
+        document.getElementById('win').innerHTML = "Score: " + score
+       
     } else {
         timerCount = timerCount - 5;
     }
 }
 
 function setStatusClass(element, correct){
- console.log("In setStatusClass")
-    console.log("go to clearStatusClass")
-    clearStatusClass(element)
-    console.log("back from clearStatusClass")
-    
 
+    clearStatusClass(element)
+ 
     if (correct) {
         element.classList.add('correct')
-        console.log("correct in setStatusClass if " + correct)
-      
-       
-        console.log("in setStatusClass if")
-        
-    } else {
 
-        console.log("in else of setStatusClass")
-    
-        
-        element.classList.add('wrong')
-        
-        console.log( "in setStatusClass else the answer wrong")
-       
+    } else {       
+        element.classList.add('wrong')    
     }
-    console.log("end of  setStatusClass")
+  
 }
 
 function clearStatusClass(element){
 
-console.log("In clearStatusClass")
+
 
     element.classList.remove('correct')
     element.classList.remove('wrong')
@@ -160,15 +126,14 @@ console.log("In clearStatusClass")
 
 function resetState(){
 
-    console.log("In resetState")
-    console.log("going to clearStatusClass")
+
     clearStatusClass(document.body)
-    console.log("back from clearStatusClass")
+  
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild){
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
-    console.log("leaving resetState ")
+ 
     
 }
 // Questions with their answers

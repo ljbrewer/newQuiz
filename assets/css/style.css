@@ -20,9 +20,10 @@ body{
     display: flex;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     background-color:hsl(var(--hue), 100%, 20%);
+    border-style: ridge;
 }
 
 body.correct{
@@ -38,8 +39,10 @@ body.wrong{
     background-color:white;
     border-radius: 5px;
     padding: 10px;
+    margin: 25px;
     box-shadow: 0 0 10PX 3PX;
     font-size: 1.5rem;
+    border-style: ridge;
 
 }
  .btn-grid{
@@ -96,9 +99,12 @@ body.wrong{
  }
 
  .win-loss-container, #countdown {
+     display: flex;
+     justify-content: flex-end;
      background-color: lightblue;
      color:rgb(5, 0, 10);
      padding : 5px;
      margin: 0 0 auto;
      border-style: ridge;
+     
  }
