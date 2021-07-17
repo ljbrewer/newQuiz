@@ -9,6 +9,7 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex
 
 let score = 0;
+var timeleft = 10;
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -20,7 +21,7 @@ nextButton.addEventListener('click', () => {
 })
 
 function startTimer() {
-    var timeleft = 10;
+   timeleft = 10;
     var downloadTimer = setInterval(function () {
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
@@ -98,7 +99,7 @@ function selectAnswer(e){
         document.getElementById('win').innerHTML = "Score: " + score
        
     } else {
-        timerCount = timerCount - 5;
+        timeleft = timeleft - 5;
     }
 }
 
