@@ -15,4 +15,6 @@ Much work is still to be done on this assignment.
 
 ### picture of Webpage:
 
-![Image of newQuiz](https://github.com/ljbrewer/newQuiz/assets/images/newQuiz.png)
+![Image of newQuiz](https://ljbrewer.github.io/newQuiz/assets/images/newQuiz.png)
+
+![image of Portfolio Website](https://ljbrewer.github.io/PasswordGenerator/Assets/03-javascript-homework-demo.png)
